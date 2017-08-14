@@ -1,0 +1,360 @@
+<html lang="default"><head>
+    <title lang="NL" translate="app_title">Aanmelden</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+    <link href="/fasui/resources/images/favicon.ico?v=20170717131754" rel="icon">
+    <!-- Import the resources -->
+    <link href="/fasui/resources/css/global.css?v=20170717131754" rel="stylesheet">
+    <link href="/fasui/resources/css/global2.css?v=20170717131754" rel="stylesheet">
+    <link href="/fasui/resources/css/global3.css?v=20170717131754" rel="stylesheet">
+    <link href="/fasui/resources/css/fedict-iam-front-vendor.css?v=20170717131754" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="/fasui/resources/javascript/vendor.min.js?v=20170717131754"></script>
+    <script src="/fasui/resources/javascript/bundle.min.js?v=20170717131754"></script><style type="text/css"></style><style type="text/css"></style>
+</head>
+<body style="overflow: auto;"><div class="spinner" id="spinner" style="background: rgba(255, 255, 255, 1); left: 0px; top: 0px; width: 100%; height: 100%; text-align: center; display: none; position: fixed; z-index: 10000;"><div class="spinner" style="left: 77px; top: 77px; width: 0px; display: none; position: absolute; z-index: 2000000000;" aria-role="progressbar"><div style="animation:opacity-60-25-0-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(0deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(0deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-1-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(27deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(27deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-2-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(55deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(55deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-3-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(83deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(83deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-4-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(110deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(110deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-5-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(138deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(138deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-6-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(166deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(166deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-7-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(193deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(193deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-8-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(221deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(221deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-9-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(249deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(249deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-10-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(276deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(276deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-11-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(304deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(304deg) translate(16px, 0px);"></div></div><div style="animation:opacity-60-25-12-13 0.833333s linear infinite; top: -2px; position: absolute; opacity: 0.25;"><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; top: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 4px #000; transform: rotate(332deg) translate(16px, 0px);"></div><div style="background: rgb(0, 0, 0); transform-origin: left 50%; border-radius: 2px; width: 11px; height: 4px; position: absolute; box-shadow: 0px 0px 1px rgba(0,0,0,0.1); transform: rotate(332deg) translate(16px, 0px);"></div></div></div></div>
+<div id="holder">
+  
+    
+
+  
+  <div class="container-fluid no-gutter language-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-11">
+                <ul class="unstyled-list list-inline language-list">
+                    <li>
+                        <a class="lowercase active" onclick="changeLanguage(this, 'NL', 'null');" href="#">NL</a>
+                    </li>
+                    <li>
+                        <a class="lowercase" onclick="changeLanguage(this, 'FR', 'null');" href="#">FR</a>
+                    </li>
+                    <li>
+                        <a class="lowercase" onclick="changeLanguage(this, 'DE', 'null');" href="#">DE</a>
+                    </li>
+                    <li>
+                        <a class="lowercase" onclick="changeLanguage(this, 'EN', 'null');" href="#">EN</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-1">
+                <img width="34" height="34" src="/fasui/resources/images/be-logo.png?v=20170717131754">
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="container-fluid no-gutter csam-header purple">
+    <div class="container no-gutter">
+      <div class="logo-container">
+        <img class="csam-header-logo" src="/fasui/resources/images/logo-csam-white-background.png?v=20170717131754" srcset="/fasui/resources/images/logo-csam-white-background-2x.png 2x">
+      </div>
+      <div class="csam-header-content">
+        <div class="csam-header_tabel">
+          <div class="csam-header_tabel-cel csam-header_tabel-cel-lg main-title no-sub">
+            <h1 lang="NL" translate="weakProfileTitle">Registratie gebruikersnaam en wachtwoord</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container csam-content-container padding-bottom-64" id="content" style="min-height: 989px;">
+      <div class="csam-aanmelden-container-wrapper padding-left-0 col-sm-12 col-md-8 col-lg-8">
+  <div class="csam-aanmelden-container ">
+    <div class="csam-aanmeld-content-container row registratie-formulier">
+      <div class="col-md-11 col-md-offset-1 col-xs-12 padding-top-42">
+        
+
+  <form id="weak-profile-form" method="post" novalidate="true">
+    <p class="pull-right" lang="NL" translate="weakProfile_form_obligatory">*Verplichte velden</p>
+    
+  
+  <div class="notification" id="validationErrors" style="display: none;">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="alert alert-danger" role="alert">
+          <div class="row">
+            <div class="col-xs-1 padding-right-0">
+              <i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="col-xs-11">
+              <ul class="list-unstyled margin-left-40" id="validationErrorMessages">
+                  
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notification" id="validationErrorFieldValues" style="display: none;">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="alert alert-danger" role="alert">
+          <div class="row">
+            <div class="col-xs-1 padding-right-0">
+              <i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="col-xs-11">
+              <ul class="list-unstyled margin-left-40" id="validationErrorFieldValueMessages">
+                  
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="clearfix">
+      
+  <div class="col-lg-12 col-md-11 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12 ">
+    <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11">
+      <label class="csam-control-label col-xs-12 control-label padding-left-0 text-left" lang="NL" for="emailAddress" translate="weakProfile_form_emailAddress">Emailadres <req>*</req></label>
+      <div class="col-sm-12 padding-right-0 form-group margin-bottom-5 padding-left-0">
+        <input name="emailAddress" class="form-control padding-right-0 margin-bottom-5" id="emailAddress" onchange="removeErrorWhenInputting(this)" type="email" value="">
+        <span class="help-block with-errors">
+          
+            <text lang="NL" translate="weakProfile_form_emailAddress_message">De activatielink wordt naar dit e-mailadres verstuurd.</text>
+          
+        </span>
+      </div>
+    </div>
+    
+  </div>
+
+      
+  <div class="col-lg-12 col-md-11 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12 ">
+    <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11">
+      <label class="csam-control-label col-xs-12 control-label padding-left-0 text-left collapse" lang="NL" for="email" translate="weakProfile_form_email">Keep this field blank, it serves as bot detection.</label>
+      <div class="padding-right-0 form-group margin-bottom-5 padding-left-0">
+        <input name="email" class="form-control padding-right-0 margin-bottom-5 collapse" id="email" onchange="removeErrorWhenInputting(this)" type="email" maxlength="12" value="">
+      </div>
+        <span class="help-block with-errors"></span>
+    </div>
+  </div>
+
+      
+  <div class="col-lg-12 col-md-11 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12 ">
+    <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11">
+      <label class="csam-control-label col-xs-12 control-label padding-left-0 text-left" lang="NL" for="firstname" translate="weakProfile_form_firstname">Voornaam <req>*</req></label>
+      <div class="col-sm-12 padding-right-0 form-group margin-bottom-5 padding-left-0">
+        <input name="firstname" class="form-control padding-right-0 margin-bottom-5" id="firstname" onchange="removeErrorWhenInputting(this)" type="text" maxlength="12" value="">
+        <span class="help-block with-errors">
+          
+        </span>
+      </div>
+    </div>
+    
+  </div>
+
+      
+  <div class="col-lg-12 col-md-11 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12 ">
+    <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11">
+      <label class="csam-control-label col-xs-12 control-label padding-left-0 text-left" lang="NL" for="lastname" translate="weakProfile_form_lastname">Achternaam <req>*</req></label>
+      <div class="col-sm-12 padding-right-0 form-group margin-bottom-5 padding-left-0">
+        <input name="lastname" class="form-control padding-right-0 margin-bottom-5" id="lastname" onchange="removeErrorWhenInputting(this)" type="text" maxlength="48" value="">
+        <span class="help-block with-errors">
+          
+        </span>
+      </div>
+    </div>
+    
+  </div>
+
+      
+  <div class="col-lg-12 col-md-11 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12 ">
+    <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11">
+      <label class="csam-control-label col-xs-12 control-label padding-left-0 text-left" lang="NL" for="username" translate="weakProfile_form_username">Gebruikersnaam <req>*</req></label>
+      <div class="col-sm-12 padding-right-0 form-group margin-bottom-5 padding-left-0">
+        <input name="username" class="form-control padding-right-0 margin-bottom-5" id="username" onchange="removeErrorWhenInputting(this)" type="text" maxlength="64" value="">
+        <span class="help-block with-errors">
+          
+        </span>
+      </div>
+    </div>
+    
+      <div class="pull-left margin-top-34">
+        
+    <i class="fa fa-question-circle LightGrey fa--sizes padding-top-6" aria-hidden="true" lang="NL" translate="weakProfile_form_username_tooltip" data-original-title="Uw gebruikersnaam moet tussen 6 en 64 karakters lang zijn, minimum 1 letter bevatten en mag alleen letters, nummers en/of deze karakters bevatten: - . _" data-toggle="tooltip" data-tooltip-id="0.04814764938547755" data-placement="right"></i>
+
+      </div>
+    
+  </div>
+
+
+      <div class="col-lg-12 col-md-11 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12 ">
+        <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11 form-group" id="password-container">
+          <label class="csam-control-label col-xs-12 control-label padding-left-0 text-left" lang="NL" for="password" translate="weakProfile_form_password">Wachtwoord <req>*</req></label>
+          <div class="padding-right-0 margin-bottom-5 padding-left-0 input-group">
+            <input name="password" class="form-control padding-right-0 margin-bottom-5 strength-checked" id="password" style="z-index: 9;" onchange="removeErrorWhenInputting(this)" type="password">
+            <span class="input-group-btn">
+              <button class="btn" id="showHideButton" type="button"><i class="fa fa-eye" id="btnIcon"></i></button>
+            </span>
+          </div>
+
+
+          <div id="barContainer" style="background: rgb(204, 204, 204); border-radius: 4px; border: 1px solid rgb(204, 204, 204); transition:border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; border-image: none; width: 100%; height: 20px; visibility: hidden; z-index: 1; box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075); -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);"></div>
+          <div id="score" style="border-radius: 4px; border: 1px solid rgb(204, 204, 204); transition:border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; border-image: none; top: -20px; height: 20px; padding-left: 10px; visibility: hidden; position: relative; box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075); background-color: rgb(204, 204, 204); -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);">
+            <span id="percentage" style="color: white; font-weight: bold;"></span>
+          </div>
+
+          <p id="progress-label" style="top: -20px; position: relative;"></p>
+            <span class="help-block with-errors"></span>
+
+          <div class="col-xs-1 margin-top-4 ">
+          </div>
+        </div>
+        <div class="pull-left margin-top-34">
+          
+    <i class="fa fa-question-circle LightGrey fa--sizes padding-top-6" aria-hidden="true" lang="NL" translate="weakProfile_form_password_tooltip" data-original-title="Uw wachtwoord moet tussen 8 en 100 karakters lang zijn, minimum 1 letter bevatten en een cijfer of één van deze karakters: '!, $, #, %, -, *, _ '." data-toggle="tooltip" data-tooltip-id="0.530769165779172" data-placement="right"></i>
+
+        </div>
+      </div>
+
+      <!-- Privacy policy -->
+      <div class="col-lg-12 col-md-12 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12 margin-bottom-32">
+        <div class="col-lg-10 col-md-11 col-sm-11 col-xs-11">
+          <div class="padding-right-0 form-group margin-bottom-5 padding-left-0">
+            <label class="text-weight-normal" for="eulaApproval">
+              <input name="eulaApproval" class="pull-left" id="eulaApproval" onchange="removeErrorWhenInputting(this)" type="checkbox" value="true"><input name="_eulaApproval" type="hidden" value="on">
+              <div class="margin-left-20">
+                <text lang="NL" translate="weakProfile_form_eula">Ik ga akkoord met de <a class="blue noUnderline" href="https://iamapps-public.belgium.be/eula/sma/nl/License%20agreement%20FEDICT%20IAM.pdf" target="_blank">gebruikersovereenkomst</a> en het  <a class="blue noUnderline" href="http://www.fedict.belgium.be/nl/privacy/privacy" target="_blank" "="">privacybeleid</a>.</text>
+              </div>
+            </label>
+            <div class="clearfix"></div>
+            <span class="help-block with-errors"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+      </div>
+    </div>
+
+    <div class="csam-aanmeld-button-container csam-aanmeld-button-container__light">
+      <div class="col-md-4 col-sm-2 padding-top-6 clearfix"></div>
+      <div class="col-md-8 col-sm-9 text-right clearfix">
+        <button class="btn btn-xs-block btn-default purple" id="register-weak-profile" lang="NL" onclick="document.forms[0].submit();" type="submit" translate="weakProfile_form_register">Registreren</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="csam-aanmeld-sidebar col-md-offset-0 col-sm-offset-0 col-md-4 col-sm-5">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="font-size-16 strong" lang="NL" translate="weakProfile_sideBar_title">Al een gebruikersnaam en wachtwoord?</h3>
+      <p lang="NL" translate="weakProfile_sideBar_content">Hebt u zich in het verleden al eens aangemeld met een andere digitale sleutel zoals met beveiligingscode via mobiele app, sms of token? Dan kan u zich met dezelfde gebruikersnaam en hetzelfde wachtwoord aanmelden. Ga naar <a class="blue noUnderline" href="https://iamapps.ta.belgium.be/sma/generalinfo?language=nl">CSAM-Mijn digitale sleutels</a> om dit te controleren.</p>
+    </div>
+  </div>
+</div>
+    </div>
+  
+  <div class="navbar" id="footer">
+    <div class="container-fluid no-gutter csam-footer-content-container csam-footer-content-container--border">
+      <div class="container csam-footer-content-inner-container">
+        <div class="col-md-5 col-lg-6 col-sm-12">
+          <h4 class="footer-banner-h4" lang="NL" translate="footer_needHelp">Hulp nodig?</h4>
+          
+            
+              <th:bloc>
+  <ul class="link-list">
+    <li lang="NL" translate="faq.weakprofile.registration_helpText1"><a href="http://sma-help.fedict.belgium.be/nl/digitale-sleutel-gebruikersnaam-en-wachtwoord#7185" target="_blank">Zelf een gebruikersnaam en wachtwoord registreren?</a></li>
+    <li lang="NL" translate="faq.weakprofile.registration_helpText2"><a href="http://sma-help.fedict.belgium.be/nl/digitale-sleutel-gebruikersnaam-en-wachtwoord#7189" target="_blank">Wat als mijn e-mailadres al gekend is?</a></li>
+    <li lang="NL" translate="faq.weakprofile.registration_helpText3"><a href="http://sma-help.fedict.belgium.be/nl/digitale-sleutel-gebruikersnaam-en-wachtwoord#7193" target="_blank">Wat als mijn gebruikersnaam al gekend is?</a></li>
+  </ul>
+</th:bloc>
+            
+            
+          
+        </div>
+
+        <div class="col-md-7 col-lg-6 col-sm-12">
+          
+            <h5 class="footer-banner-h5">
+              <span lang="NL" translate="footer_notFoundWhatLookingFor">Niet gevonden wat u zocht?</span>
+              <span lang="NL" translate="footer_needHelpText">Raadpleeg onze <a title="Raadpleeg de hulppaginas" href="http://sma-help.fedict.belgium.be/nl/faq-list">hulppagina's</a>&nbsp;en vind snel een antwoord op uw vraag.</span>
+            </h5>
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-fluid no-gutter csam-footer-container">
+      <div class="container csam-footer-inner-container">
+        <div class="col-sm-6 links">
+          <ul class="unstyled-list list-inline csam-footer-links">
+            <li>© <span>2017</span> CSAM</li>
+            <li lang="NL" translate="footer_copyRightCsam"><a href="https://www.csam.be/nl/index.html" target="_blank">Meer weten over CSAM?</a></li>
+            <li lang="NL" translate="footer_termsOfUse"><a href="https://iamapps-public.belgium.be/eula/sma/nl/License%20agreement%20FEDICT%20IAM.pdf" target="_blank">Gebruiksvoorwaarden</a></li>
+            <li lang="NL" translate="footer_privacy"><a href="http://www.fedict.belgium.be/nl/privacy/privacy" target="_blank">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="unstyled-list list-inline csam-footer-links pull-right">
+            <li lang="NL" translate="footer_powerdBy">Powered by FOD Beleid en Ondersteuning - DG Digitale Transformatie</li>
+            <li lang="NL" translate="footer_version"><a href="https://iamapps.ta.belgium.be/sma/version?language=nl" target="_blank">14.0.0</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+    <script>
+        /*
+         * this can't be in the *.js file because
+         * it is specific for each page
+         * and we need to access the currentLanguage response attribute using Thymeleaf
+         */
+        var lang = new Lang();
+        lang.init({
+            defaultLang: 'default',
+            currentLang: 'NL',
+            cookie: {
+              name: 'IAA-lang',
+              expiry: 3650,
+              domain: null
+            },
+          allowCookieOverride: false
+        });
+        // IAAF-106: IE need an extra parameter to force reload labels.
+        var timestamp = new Date().getTime();
+
+        // call translation dynamically
+        lang.dynamic('NL', ROOT_CONTEXT + 'labels?language=nl&amp;t=' + timestamp);
+        lang.dynamic('FR', ROOT_CONTEXT + 'labels?language=fr&amp;t=' + timestamp);
+        lang.dynamic('DE', ROOT_CONTEXT + 'labels?language=de&amp;t=' + timestamp);
+        lang.dynamic('EN', ROOT_CONTEXT + 'labels?language=en&amp;t=' + timestamp);
+    </script>
+
+
+    <div tabindex="-1" class="modal fade" id="loaderOverlay" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="overlay-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body></html>

@@ -1,0 +1,222 @@
+<html>
+<head>
+<title>MainRunnerClass.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainRunnerClass.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">import </span><span class="s1">com.codeborne.selenide.Condition; 
+<a name="l2"><span class="ln">2    </span></a></span><span class="s0">import </span><span class="s1">com.codeborne.selenide.Configuration; 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">com.codeborne.selenide.Selenide; 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">com.codeborne.selenide.WebDriverRunner; 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">import </span><span class="s1">com.codeborne.selenide.impl.WebDriverContainer; 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">import </span><span class="s1">com.codeborne.selenide.impl.WebDriverThreadLocalContainer; 
+<a name="l7"><span class="ln">7    </span></a></span><span class="s0">import </span><span class="s1">org.apache.commons.lang.RandomStringUtils; 
+<a name="l8"><span class="ln">8    </span></a></span><span class="s0">import </span><span class="s1">org.junit.After; 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">import </span><span class="s1">org.junit.Ignore; 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s0">import </span><span class="s1">org.junit.Test; 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s0">import </span><span class="s1">org.openqa.selenium.By; 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s0">import </span><span class="s1">org.openqa.selenium.JavascriptExecutor; 
+<a name="l13"><span class="ln">13   </span></a></span><span class="s0">import </span><span class="s1">org.openqa.selenium.WebDriver; 
+<a name="l14"><span class="ln">14   </span></a> 
+<a name="l15"><span class="ln">15   </span></a></span><span class="s0">import </span><span class="s1">java.io.IOException; 
+<a name="l16"><span class="ln">16   </span></a> 
+<a name="l17"><span class="ln">17   </span></a></span><span class="s0">import static </span><span class="s1">com.codeborne.selenide.Condition.*; 
+<a name="l18"><span class="ln">18   </span></a> 
+<a name="l19"><span class="ln">19   </span></a></span><span class="s0">import static </span><span class="s1">com.codeborne.selenide.WebDriverRunner.webdriverContainer; 
+<a name="l20"><span class="ln">20   </span></a> 
+<a name="l21"><span class="ln">21   </span></a></span><span class="s2">/** 
+<a name="l22"><span class="ln">22   </span></a> * Created by timmec1 on 7/07/2017. 
+<a name="l23"><span class="ln">23   </span></a> */</span><span class="s1"> 
+<a name="l24"><span class="ln">24   </span></a></span><span class="s0">public class </span><span class="s1">MainRunnerClass </span><span class="s0">extends </span><span class="s1">Selenide { 
+<a name="l25"><span class="ln">25   </span></a>    </span><span class="s0">private static </span><span class="s1">String urlTemp = </span><span class="s3">&quot;https://idp.iamfas.ta.belgium.be/fasui/registration/weakprofile&quot;</span><span class="s1">; 
+<a name="l26"><span class="ln">26   </span></a> 
+<a name="l27"><span class="ln">27   </span></a>    String username = </span><span class="s0">new </span><span class="s1">RandomStringClass().getUsername(); 
+<a name="l28"><span class="ln">28   </span></a>    String emailAddress = </span><span class="s0">new </span><span class="s1">RandomStringClass().getEmailAddress(); 
+<a name="l29"><span class="ln">29   </span></a>    String firstname = </span><span class="s0">new </span><span class="s1">RandomStringClass().getFirstname(); 
+<a name="l30"><span class="ln">30   </span></a>    String password = </span><span class="s0">new </span><span class="s1">RandomStringClass().getPassword(); 
+<a name="l31"><span class="ln">31   </span></a>    String lastname = </span><span class="s0">new </span><span class="s1">RandomStringClass().getLastname(); 
+<a name="l32"><span class="ln">32   </span></a>    </span><span class="s0">private static </span><span class="s1">String browserMain = </span><span class="s3">&quot;&quot;</span><span class="s1">; 
+<a name="l33"><span class="ln">33   </span></a> 
+<a name="l34"><span class="ln">34   </span></a>    </span><span class="s0">private static </span><span class="s1">String upperLanguage = </span><span class="s3">&quot;NL&quot;</span><span class="s1">.toUpperCase(); 
+<a name="l35"><span class="ln">35   </span></a> 
+<a name="l36"><span class="ln">36   </span></a>    </span><span class="s2">//NL, FR, DE, EN</span><span class="s1"> 
+<a name="l37"><span class="ln">37   </span></a>    </span><span class="s0">public void </span><span class="s1">loginProcess() { 
+<a name="l38"><span class="ln">38   </span></a>        clickCookieButton(); 
+<a name="l39"><span class="ln">39   </span></a>        switchLanguage(); 
+<a name="l40"><span class="ln">40   </span></a>        $(By.id(</span><span class="s3">&quot;emailAddress&quot;</span><span class="s1">)).sendKeys(emailAddress); 
+<a name="l41"><span class="ln">41   </span></a>        $(By.id(</span><span class="s3">&quot;firstname&quot;</span><span class="s1">)).sendKeys(firstname); 
+<a name="l42"><span class="ln">42   </span></a>        $(By.id(</span><span class="s3">&quot;lastname&quot;</span><span class="s1">)).sendKeys(lastname); 
+<a name="l43"><span class="ln">43   </span></a>        $(By.id(</span><span class="s3">&quot;password&quot;</span><span class="s1">)).sendKeys(password); 
+<a name="l44"><span class="ln">44   </span></a>        $(By.id(</span><span class="s3">&quot;username&quot;</span><span class="s1">)).sendKeys(username); 
+<a name="l45"><span class="ln">45   </span></a>        $(By.id(</span><span class="s3">&quot;eulaApproval&quot;</span><span class="s1">)).click(); 
+<a name="l46"><span class="ln">46   </span></a>        $(By.id(</span><span class="s3">&quot;register-weak-profile&quot;</span><span class="s1">)).click(); 
+<a name="l47"><span class="ln">47   </span></a>    } 
+<a name="l48"><span class="ln">48   </span></a> 
+<a name="l49"><span class="ln">49   </span></a>    </span><span class="s0">public void </span><span class="s1">loginProcess(String browser) { 
+<a name="l50"><span class="ln">50   </span></a>        JavascriptExecutor js = (JavascriptExecutor) getWebdriver(); 
+<a name="l51"><span class="ln">51   </span></a>        </span><span class="s0">if </span><span class="s1">(browser.equalsIgnoreCase(</span><span class="s3">&quot;edge&quot;</span><span class="s1">)) { 
+<a name="l52"><span class="ln">52   </span></a>            js.executeScript(</span><span class="s3">&quot;arguments[0].click();&quot;</span><span class="s1">, $(</span><span class="s3">&quot;a[onclick = </span><span class="s0">\&quot;</span><span class="s3">changeLanguage(this, </span><span class="s0">\'</span><span class="s3">&quot;</span><span class="s1">+ upperLanguage +</span><span class="s3">&quot;</span><span class="s0">\'</span><span class="s3">, 'null');</span><span class="s0">\&quot;</span><span class="s3">]&quot;</span><span class="s1">)); 
+<a name="l53"><span class="ln">53   </span></a>        } </span><span class="s0">else if </span><span class="s1">(browser.equalsIgnoreCase(</span><span class="s3">&quot;ie&quot;</span><span class="s1">)){ 
+<a name="l54"><span class="ln">54   </span></a>            clickCookieButton(); 
+<a name="l55"><span class="ln">55   </span></a>            switchLanguage(); 
+<a name="l56"><span class="ln">56   </span></a>        } 
+<a name="l57"><span class="ln">57   </span></a>        $(By.id(</span><span class="s3">&quot;username&quot;</span><span class="s1">)).sendKeys(username); 
+<a name="l58"><span class="ln">58   </span></a>        $(By.id(</span><span class="s3">&quot;emailAddress&quot;</span><span class="s1">)).sendKeys(emailAddress); 
+<a name="l59"><span class="ln">59   </span></a>        $(By.id(</span><span class="s3">&quot;firstname&quot;</span><span class="s1">)).sendKeys(firstname); 
+<a name="l60"><span class="ln">60   </span></a>        $(By.id(</span><span class="s3">&quot;password&quot;</span><span class="s1">)).sendKeys(password); 
+<a name="l61"><span class="ln">61   </span></a>        $(By.id(</span><span class="s3">&quot;lastname&quot;</span><span class="s1">)).sendKeys(lastname); 
+<a name="l62"><span class="ln">62   </span></a>        </span><span class="s0">if </span><span class="s1">(browser.equalsIgnoreCase(</span><span class="s3">&quot;edge&quot;</span><span class="s1">)) { 
+<a name="l63"><span class="ln">63   </span></a>            js.executeScript(</span><span class="s3">&quot;arguments[0].click();&quot;</span><span class="s1">, $(By.id(</span><span class="s3">&quot;eulaApproval&quot;</span><span class="s1">))); 
+<a name="l64"><span class="ln">64   </span></a> 
+<a name="l65"><span class="ln">65   </span></a>        $(By.id(</span><span class="s3">&quot;register-weak-profile&quot;</span><span class="s1">)).click(); 
+<a name="l66"><span class="ln">66   </span></a>        JavascriptExecutor jsa = (JavascriptExecutor) getWebdriver(); 
+<a name="l67"><span class="ln">67   </span></a>        jsa.executeScript(</span><span class="s3">&quot;arguments[0].click();&quot;</span><span class="s1">, $(By.id(</span><span class="s3">&quot;register-weak-profile&quot;</span><span class="s1">))); 
+<a name="l68"><span class="ln">68   </span></a>        } </span><span class="s0">else if </span><span class="s1">(browser.equalsIgnoreCase(</span><span class="s3">&quot;ie&quot;</span><span class="s1">)){ 
+<a name="l69"><span class="ln">69   </span></a>            $(By.id(</span><span class="s3">&quot;eulaApproval&quot;</span><span class="s1">)).click(); 
+<a name="l70"><span class="ln">70   </span></a>            $(By.id(</span><span class="s3">&quot;register-weak-profile&quot;</span><span class="s1">)).click(); 
+<a name="l71"><span class="ln">71   </span></a>        } 
+<a name="l72"><span class="ln">72   </span></a>     } 
+<a name="l73"><span class="ln">73   </span></a> 
+<a name="l74"><span class="ln">74   </span></a>    </span><span class="s0">public void </span><span class="s1">clickCookieButton(){ 
+<a name="l75"><span class="ln">75   </span></a>       </span><span class="s0">if </span><span class="s1">($(By.id(</span><span class="s3">&quot;cookie-button&quot;</span><span class="s1">)).isDisplayed()){ 
+<a name="l76"><span class="ln">76   </span></a>           $(By.id(</span><span class="s3">&quot;cookie-button&quot;</span><span class="s1">)).click(); 
+<a name="l77"><span class="ln">77   </span></a>       } 
+<a name="l78"><span class="ln">78   </span></a>       </span><span class="s2">//if (browserMain.equalsIgnoreCase(&quot;firefox&quot;)){</span><span class="s1"> 
+<a name="l79"><span class="ln">79   </span></a>         </span><span class="s2">//   $(By.id(&quot;cookie-button&quot;)).click();</span><span class="s1"> 
+<a name="l80"><span class="ln">80   </span></a>        </span><span class="s2">//}</span><span class="s1"> 
+<a name="l81"><span class="ln">81   </span></a>    } 
+<a name="l82"><span class="ln">82   </span></a> 
+<a name="l83"><span class="ln">83   </span></a>    </span><span class="s0">public void </span><span class="s1">switchLanguage(){ 
+<a name="l84"><span class="ln">84   </span></a>        $(</span><span class="s3">&quot;a[onclick = </span><span class="s0">\&quot;</span><span class="s3">changeLanguage(this, </span><span class="s0">\'</span><span class="s3">&quot; </span><span class="s1">+ upperLanguage + </span><span class="s3">&quot;</span><span class="s0">\'</span><span class="s3">, 'null');</span><span class="s0">\&quot;</span><span class="s3">]&quot;</span><span class="s1">).click(); 
+<a name="l85"><span class="ln">85   </span></a>    } 
+<a name="l86"><span class="ln">86   </span></a> 
+<a name="l87"><span class="ln">87   </span></a> 
+<a name="l88"><span class="ln">88   </span></a>    @Test 
+<a name="l89"><span class="ln">89   </span></a>    </span><span class="s0">public void </span><span class="s1">loginChrome() { 
+<a name="l90"><span class="ln">90   </span></a>        browserMain = </span><span class="s3">&quot;chrome&quot;</span><span class="s1">.toUpperCase(); 
+<a name="l91"><span class="ln">91   </span></a>        System.out.println(</span><span class="s3">&quot;username: &quot; </span><span class="s1">+ username + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">emailAddress: &quot; </span><span class="s1">+ emailAddress + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">password: &quot; </span><span class="s1">+ password); 
+<a name="l92"><span class="ln">92   </span></a>        Configuration.browser = </span><span class="s3">&quot;chrome&quot;</span><span class="s1">; 
+<a name="l93"><span class="ln">93   </span></a>        open(urlTemp); 
+<a name="l94"><span class="ln">94   </span></a>        loginProcess(); 
+<a name="l95"><span class="ln">95   </span></a>        System.out.println(); 
+<a name="l96"><span class="ln">96   </span></a>    } 
+<a name="l97"><span class="ln">97   </span></a> 
+<a name="l98"><span class="ln">98   </span></a>    @Test 
+<a name="l99"><span class="ln">99   </span></a>    </span><span class="s0">public void </span><span class="s1">loginFirefox() </span><span class="s0">throws </span><span class="s1">InterruptedException { 
+<a name="l100"><span class="ln">100  </span></a>        Thread.sleep(</span><span class="s4">5000</span><span class="s1">); 
+<a name="l101"><span class="ln">101  </span></a>        browserMain = </span><span class="s3">&quot;firefox&quot;</span><span class="s1">.toUpperCase(); 
+<a name="l102"><span class="ln">102  </span></a>        System.out.println(</span><span class="s3">&quot;username: &quot; </span><span class="s1">+ username + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">emailAddress: &quot; </span><span class="s1">+ emailAddress + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">password: &quot; </span><span class="s1">+ password); 
+<a name="l103"><span class="ln">103  </span></a>        Configuration.browser = </span><span class="s3">&quot;gecko&quot;</span><span class="s1">; 
+<a name="l104"><span class="ln">104  </span></a>        open(urlTemp); 
+<a name="l105"><span class="ln">105  </span></a>        loginProcess(); 
+<a name="l106"><span class="ln">106  </span></a>    } 
+<a name="l107"><span class="ln">107  </span></a> 
+<a name="l108"><span class="ln">108  </span></a>    @Test 
+<a name="l109"><span class="ln">109  </span></a>    </span><span class="s0">public void </span><span class="s1">loginEdge() { 
+<a name="l110"><span class="ln">110  </span></a>        browserMain = </span><span class="s3">&quot;edge&quot;</span><span class="s1">.toUpperCase(); 
+<a name="l111"><span class="ln">111  </span></a>        System.out.println(</span><span class="s3">&quot;username: &quot; </span><span class="s1">+ username + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">emailAddress: &quot; </span><span class="s1">+ emailAddress + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">firstname: &quot; </span><span class="s1">+ firstname + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">password: &quot; </span><span class="s1">+ password + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">lastname: &quot; </span><span class="s1">+ lastname); 
+<a name="l112"><span class="ln">112  </span></a>        Configuration.browser = </span><span class="s3">&quot;edge&quot;</span><span class="s1">; 
+<a name="l113"><span class="ln">113  </span></a>        open(urlTemp); 
+<a name="l114"><span class="ln">114  </span></a>        loginProcess(browserMain.toLowerCase()); 
+<a name="l115"><span class="ln">115  </span></a>        System.out.println(); 
+<a name="l116"><span class="ln">116  </span></a>    } 
+<a name="l117"><span class="ln">117  </span></a> 
+<a name="l118"><span class="ln">118  </span></a>    @Test 
+<a name="l119"><span class="ln">119  </span></a>    </span><span class="s0">public void </span><span class="s1">loginIe() </span><span class="s0">throws </span><span class="s1">InterruptedException { 
+<a name="l120"><span class="ln">120  </span></a>        browserMain = </span><span class="s3">&quot;ie&quot;</span><span class="s1">.toUpperCase(); 
+<a name="l121"><span class="ln">121  </span></a>        System.out.println(</span><span class="s3">&quot;username: &quot; </span><span class="s1">+ username + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">emailAddress: &quot; </span><span class="s1">+ emailAddress + </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">password: &quot; </span><span class="s1">+ password); 
+<a name="l122"><span class="ln">122  </span></a>        com.codeborne.selenide.Configuration.browser = browserMain.toLowerCase(); 
+<a name="l123"><span class="ln">123  </span></a>        open(urlTemp); 
+<a name="l124"><span class="ln">124  </span></a>        loginProcess(</span><span class="s3">&quot;ie&quot;</span><span class="s1">); 
+<a name="l125"><span class="ln">125  </span></a> 
+<a name="l126"><span class="ln">126  </span></a>    } 
+<a name="l127"><span class="ln">127  </span></a> 
+<a name="l128"><span class="ln">128  </span></a>    </span><span class="s0">public class </span><span class="s1">RandomStringClass { 
+<a name="l129"><span class="ln">129  </span></a>        </span><span class="s0">private </span><span class="s1">String username; 
+<a name="l130"><span class="ln">130  </span></a>        </span><span class="s0">private </span><span class="s1">String emailAddress; 
+<a name="l131"><span class="ln">131  </span></a>        </span><span class="s0">private </span><span class="s1">String firstname; 
+<a name="l132"><span class="ln">132  </span></a>        </span><span class="s0">private </span><span class="s1">String password; 
+<a name="l133"><span class="ln">133  </span></a>        </span><span class="s0">private </span><span class="s1">String lastname; 
+<a name="l134"><span class="ln">134  </span></a> 
+<a name="l135"><span class="ln">135  </span></a>        </span><span class="s0">public </span><span class="s1">RandomStringClass() { 
+<a name="l136"><span class="ln">136  </span></a>            setUsername(RandomStringUtils.randomAlphabetic(</span><span class="s4">10</span><span class="s1">)); 
+<a name="l137"><span class="ln">137  </span></a>            setEmailAddress(RandomStringUtils.randomAlphabetic(</span><span class="s4">10</span><span class="s1">) + </span><span class="s3">&quot;@mailinator.com&quot;</span><span class="s1">); 
+<a name="l138"><span class="ln">138  </span></a>            setFirstname(RandomStringUtils.randomAlphabetic(</span><span class="s4">6</span><span class="s1">)); 
+<a name="l139"><span class="ln">139  </span></a>            setPassword(RandomStringUtils.randomAlphabetic(</span><span class="s4">10</span><span class="s1">) + </span><span class="s3">&quot;1&quot;</span><span class="s1">); 
+<a name="l140"><span class="ln">140  </span></a>            setLastname(RandomStringUtils.randomAlphabetic(</span><span class="s4">6</span><span class="s1">)); 
+<a name="l141"><span class="ln">141  </span></a>        } 
+<a name="l142"><span class="ln">142  </span></a> 
+<a name="l143"><span class="ln">143  </span></a>        </span><span class="s0">public void </span><span class="s1">setUsername(String username) { 
+<a name="l144"><span class="ln">144  </span></a>            </span><span class="s0">this</span><span class="s1">.username = username; 
+<a name="l145"><span class="ln">145  </span></a>        } 
+<a name="l146"><span class="ln">146  </span></a> 
+<a name="l147"><span class="ln">147  </span></a>        </span><span class="s0">public </span><span class="s1">String getUsername() { 
+<a name="l148"><span class="ln">148  </span></a>            </span><span class="s0">return </span><span class="s1">username; 
+<a name="l149"><span class="ln">149  </span></a>        } 
+<a name="l150"><span class="ln">150  </span></a> 
+<a name="l151"><span class="ln">151  </span></a>        </span><span class="s0">public </span><span class="s1">String getEmailAddress() { 
+<a name="l152"><span class="ln">152  </span></a>            </span><span class="s0">return </span><span class="s1">emailAddress; 
+<a name="l153"><span class="ln">153  </span></a>        } 
+<a name="l154"><span class="ln">154  </span></a> 
+<a name="l155"><span class="ln">155  </span></a>        </span><span class="s0">public void </span><span class="s1">setEmailAddress(String emailAddress) { 
+<a name="l156"><span class="ln">156  </span></a>            </span><span class="s0">this</span><span class="s1">.emailAddress = emailAddress; 
+<a name="l157"><span class="ln">157  </span></a>        } 
+<a name="l158"><span class="ln">158  </span></a> 
+<a name="l159"><span class="ln">159  </span></a>        </span><span class="s0">public </span><span class="s1">String getFirstname() { 
+<a name="l160"><span class="ln">160  </span></a>            </span><span class="s0">return </span><span class="s1">firstname; 
+<a name="l161"><span class="ln">161  </span></a>        } 
+<a name="l162"><span class="ln">162  </span></a> 
+<a name="l163"><span class="ln">163  </span></a>        </span><span class="s0">public void </span><span class="s1">setFirstname(String firstname) { 
+<a name="l164"><span class="ln">164  </span></a>            </span><span class="s0">this</span><span class="s1">.firstname = firstname; 
+<a name="l165"><span class="ln">165  </span></a>        } 
+<a name="l166"><span class="ln">166  </span></a> 
+<a name="l167"><span class="ln">167  </span></a>        </span><span class="s0">public </span><span class="s1">String getPassword() { 
+<a name="l168"><span class="ln">168  </span></a>            </span><span class="s0">return </span><span class="s1">password; 
+<a name="l169"><span class="ln">169  </span></a>        } 
+<a name="l170"><span class="ln">170  </span></a> 
+<a name="l171"><span class="ln">171  </span></a>        </span><span class="s0">public void </span><span class="s1">setPassword(String password) { 
+<a name="l172"><span class="ln">172  </span></a>            </span><span class="s0">this</span><span class="s1">.password = password; 
+<a name="l173"><span class="ln">173  </span></a>        } 
+<a name="l174"><span class="ln">174  </span></a> 
+<a name="l175"><span class="ln">175  </span></a>        </span><span class="s0">public </span><span class="s1">String getLastname() { 
+<a name="l176"><span class="ln">176  </span></a>            </span><span class="s0">return </span><span class="s1">lastname; 
+<a name="l177"><span class="ln">177  </span></a>        } 
+<a name="l178"><span class="ln">178  </span></a> 
+<a name="l179"><span class="ln">179  </span></a>        </span><span class="s0">public void </span><span class="s1">setLastname(String lastname) { 
+<a name="l180"><span class="ln">180  </span></a>            </span><span class="s0">this</span><span class="s1">.lastname = lastname; 
+<a name="l181"><span class="ln">181  </span></a>        } 
+<a name="l182"><span class="ln">182  </span></a>    } 
+<a name="l183"><span class="ln">183  </span></a> 
+<a name="l184"><span class="ln">184  </span></a>    @After 
+<a name="l185"><span class="ln">185  </span></a>    </span><span class="s0">public void </span><span class="s1">afterTest() { 
+<a name="l186"><span class="ln">186  </span></a>        close(); 
+<a name="l187"><span class="ln">187  </span></a>        </span><span class="s0">try </span><span class="s1">{ 
+<a name="l188"><span class="ln">188  </span></a>            Runtime.getRuntime().exec(</span><span class="s3">&quot;taskkill /F /IM iexplore.exe&quot;</span><span class="s1">); 
+<a name="l189"><span class="ln">189  </span></a>        } </span><span class="s0">catch </span><span class="s1">(IOException e) { 
+<a name="l190"><span class="ln">190  </span></a>            e.printStackTrace(); 
+<a name="l191"><span class="ln">191  </span></a> 
+<a name="l192"><span class="ln">192  </span></a>        } 
+<a name="l193"><span class="ln">193  </span></a>    } 
+<a name="l194"><span class="ln">194  </span></a> 
+<a name="l195"><span class="ln">195  </span></a>    </span><span class="s0">public static </span><span class="s1">WebDriver getWebdriver(){ 
+<a name="l196"><span class="ln">196  </span></a>       </span><span class="s0">return </span><span class="s1">webdriverContainer.getWebDriver(); 
+<a name="l197"><span class="ln">197  </span></a>    } 
+<a name="l198"><span class="ln">198  </span></a> 
+<a name="l199"><span class="ln">199  </span></a>} 
+<a name="l200"><span class="ln">200  </span></a></span></pre>
+</body>
+</html>
